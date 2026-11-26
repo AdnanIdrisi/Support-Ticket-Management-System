@@ -18,6 +18,9 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const app = express();
 
+// Trust Render / reverse proxy headers for accurate rate limiting
+app.set('trust proxy', 1);
+
 // Security & utility middlewares
 app.use(helmet());
 app.use(
