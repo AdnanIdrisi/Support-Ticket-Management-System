@@ -100,7 +100,11 @@ cp .env.example .env
 | `ADMIN_NAME` | Seed admin display name | `System Admin` |
 | `ADMIN_EMAIL` | Seed admin email | `admin@example.com` |
 | `ADMIN_PASSWORD` | Seed admin password | `Admin@123456` |
-| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASS` | Nodemailer SMTP credentials | `smtp.gmail.com` |
+| `GOOGLE_USER` | Gmail address for sending notifications | `yourname@gmail.com` |
+| `GOOGLE_CLIENT_ID` | Google OAuth2 Client ID | `...apps.googleusercontent.com` |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth2 Client Secret | `GOCSPX-...` |
+| `GOOGLE_REFRESH_TOKEN` | Google OAuth2 Refresh Token | `1//04...` |
+| `EMAIL_FROM` | *(Optional)* Sender address (defaults to `GOOGLE_USER`) | `yourname@gmail.com` |
 
 ### 3. Run in Development
 Start backend and frontend in separate terminals:
@@ -139,7 +143,7 @@ Because the Express backend serves the built React frontend (`client/dist`) in p
    - `MONGODB_URI=<your-atlas-uri>`
    - `JWT_SECRET=<strong-random-secret>`
    - `JWT_EXPIRES_IN=7d`
-   - *(Optional)* `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `EMAIL_FROM`
+   - *(Optional)* `GOOGLE_USER`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN`, `EMAIL_FROM`
 5. Deploy! Render will build the React app and serve both the UI and `/api/v1/*` from the same domain.
 
 ### Docker Deployment

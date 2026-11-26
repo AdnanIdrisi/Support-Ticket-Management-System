@@ -12,6 +12,9 @@ const authRoutes = require('./routes/authRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const dns = require("dns")
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const app = express();
 

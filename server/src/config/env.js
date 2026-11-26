@@ -15,13 +15,12 @@ const env = {
   adminName: process.env.ADMIN_NAME || 'System Admin',
   adminEmail: process.env.ADMIN_EMAIL || 'admin@example.com',
   adminPassword: process.env.ADMIN_PASSWORD || 'Admin@123456',
-  smtp: {
-    host: process.env.SMTP_HOST || '',
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: process.env.SMTP_SECURE === 'true',
-    user: process.env.SMTP_USER || '',
-    pass: process.env.SMTP_PASS || '',
-    from: process.env.EMAIL_FROM || 'Helpdesk Support <no-reply@helpdesk.local>',
+  google: {
+    user: process.env.GOOGLE_USER || '',
+    clientId: process.env.GOOGLE_CLIENT_ID || '',
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+    refreshToken: process.env.GOOGLE_REFRESH_TOKEN || '',
+    from: process.env.EMAIL_FROM || process.env.GOOGLE_USER || 'Helpdesk Support <no-reply@helpdesk.local>',
   },
 };
 
